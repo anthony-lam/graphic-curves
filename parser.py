@@ -100,5 +100,9 @@ def parse_file( fname, edges, transform, screen, color ):
                 display(screen)
             else:
                 save_extension(screen, args[0])
-            
+        elif line == 'circle':
+		add_curve(edges, float(args[0]), float(args[1]), float(args[2]), float(args[3]), 0.01)
+	elif line == 'hermite':
+		
+    
         c+= 1
