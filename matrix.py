@@ -13,16 +13,18 @@ def make_bezier():
     return [[-1,3,-3,1],[3,-6,3,0],[-3,3,0,0],[1,0,0,0]]
 
 def make_hermite():
-    return [[2,-2,1,1],[-3,3,-2,-1],[0,0,1,0],[1,0,0,0]]
+    return [[2,-3,0,1],[-2,3,0,0],[1,-2,1,0],[1,-1,0,0]]
 
 def generate_curve_coefs( p1, p2, p3, p4, t ):
-    points = [p1,p2,p3,p4]
+    points = [[p1,p2,p3,p4]]
     if (t == 0):
         #bezier
-        return matrix_mult(make_bezier(),points);
+        matrix_mult(make_bezier(),points)
+        return points
     else:
         #hermite
-        return matrix_mult(make_hermite(), points);
+        matrix_mult(make_hermite(), points)
+        return points
         
         
 
